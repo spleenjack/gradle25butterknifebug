@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        if (project.hasProperty('useAlpha')){
+            classpath 'com.android.tools.build:gradle:2.5.0-alpha-preview-01'
+        } else {
+            classpath 'com.android.tools.build:gradle:2.4.0-alpha6'
+        }
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
